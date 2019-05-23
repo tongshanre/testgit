@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: provider-service-dev
+server:
+  port: 5002
+dubbo:
+  application:
+    name: provider-service
+    qosEnable: false
+    qosPort: 7002
+    qosAcceptForeignIp: false
+  protocol:
+    name: dubbo
+    port: 6002
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+  provider:
+    filter: tracing
+  consumer:
+    filter: tracing
