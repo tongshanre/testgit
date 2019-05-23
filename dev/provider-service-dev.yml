@@ -1,6 +1,9 @@
 spring:
   application:
     name: provider-service-dev
+  dubbo:
+    consumer:
+      filter: tracing
 server:
   port: 5002
 dubbo:
@@ -15,7 +18,3 @@ dubbo:
   registry:
     protocol: zookeeper
     address: 127.0.0.1:2181
-  provider:
-    filter: tracing
-  consumer:
-    filter: tracing
